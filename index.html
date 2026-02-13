@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Be My Valentine?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+
+  <div class="bg-orb orb-1" aria-hidden="true"></div>
+  <div class="bg-orb orb-2" aria-hidden="true"></div>
+  <div class="bg-orb orb-3" aria-hidden="true"></div>
+
+  <main class="page" role="main">
+    <section class="hero reveal">
+      <p class="tag">For someone special</p>
+      <h1>Will you be my Valentine?</h1>
+      <p class="message">
+        Every day feels brighter with you. I want more smiles, more memories,
+        and one beautiful love story with you.
+      </p>
+      <button class="jump-btn" id="jumpToProposal">Jump to proposal</button>
+      <p class="hint">Scroll for our little love story</p>
+    </section>
+
+    <section class="panel reveal" id="memories">
+      <h2>Our Vibe</h2>
+      <p>Every frame looks better when we are together.</p>
+      <figure class="hero-photo-wrap">
+        <img class="hero-photo" src="valentine-moment.jpg" alt="Romantic snowy moment" />
+      </figure>
+    </section>
+
+    <section class="panel reveal" id="customize">
+      <h2>Your Photos</h2>
+      <p>Add your own photos for the slides, or continue without them.</p>
+
+      <div class="upload-controls">
+        <input id="photoInput" type="file" accept="image/*" multiple />
+        <button class="mini-btn" id="applyPhotosBtn" type="button">Use uploaded photos</button>
+        <button class="mini-btn secondary" id="skipPhotosBtn" type="button">Continue without photos</button>
+      </div>
+
+      <p class="small-note" id="photoStatus">No custom photos selected yet.</p>
+      <div class="upload-preview" id="uploadPreview"></div>
+
+      <div class="share-controls">
+        <button class="mini-btn" id="generateLinkBtn" type="button">Generate share link</button>
+        <button class="mini-btn secondary" id="copyLinkBtn" type="button">Copy link</button>
+        <button class="mini-btn secondary" id="shareBtn" type="button">Share</button>
+      </div>
+      <input id="shareLink" class="share-link" type="text" readonly placeholder="Share link will appear here" />
+      <p class="small-note">Note: photo links can get long if images are very large.</p>
+    </section>
+
+    <section class="panel reveal" id="gallery">
+      <h2>Memory Slides</h2>
+      <p>Swipe our moments with arrows, dots, or keyboard keys.</p>
+
+      <div class="slider" id="slider">
+        <button class="slide-btn" id="prevSlide" aria-label="Previous slide">&#10094;</button>
+
+        <div class="slides-window">
+          <div class="slides-track" id="slidesTrack">
+            <figure class="slide">
+              <img src="valentine-moment.jpg" alt="Romantic bridge moment" />
+              <figcaption>From shy looks to real love.</figcaption>
+            </figure>
+            <figure class="slide">
+              <img src="zootopia-2-123125-6cf558ba828d47388e367f62ce57aa1a.webp" alt="Playful party moment" />
+              <figcaption>Laughing together is my favorite sound.</figcaption>
+            </figure>
+            <figure class="slide">
+              <img src="zootopia-2-sequel-movie.avif" alt="Elegant evening moment" />
+              <figcaption>Dressed up, still looking at only you.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <button class="slide-btn" id="nextSlide" aria-label="Next slide">&#10095;</button>
+      </div>
+
+      <div class="dots" id="dots" aria-label="Slide indicators"></div>
+    </section>
+
+    <section class="panel proposal-card reveal" id="proposal">
+      <h2>Final Question</h2>
+      <p class="message" id="message">
+        I choose you today, tomorrow, and every day after. Will you choose me too?
+      </p>
+
+      <div class="buttons" id="buttons">
+        <button class="btn btn-yes" id="yesBtn">Yes, absolutely</button>
+        <button class="btn btn-no" id="noBtn">Not sure</button>
+      </div>
+
+      <section class="reaction hidden" id="reaction" aria-live="polite">
+        <div class="face" id="face">&#128546;</div>
+        <p id="reactionText">Please do not say no...</p>
+      </section>
+
+      <section class="success hidden" id="success" aria-live="polite">
+        <h3>You just made my world perfect.</h3>
+        <p>Dinner is on me. Forever starts now.</p>
+      </section>
+    </section>
+  </main>
+
+  <div class="hearts" id="hearts" aria-hidden="true"></div>
+  <div class="tears" id="tears" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
