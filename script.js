@@ -129,7 +129,7 @@ window.addEventListener("keydown", (event) => {
   }
 });
 
-yearLine.textContent = `Made with friendship and gratitude - ${new Date().getFullYear()}`;
+yearLine.textContent = `topboykrepta "nakucheki" - ${new Date().getFullYear()}`;
 revealOnScroll();
 setSlide(0);
 setInterval(() => setSlide(currentSlide + 1), 5200);
